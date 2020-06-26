@@ -21,9 +21,13 @@ const StyledAlbum = styled.div`
 
 const StyledButtonContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `
 
+const styleButton = {
+  height: '40px',
+  padding: '2px 10px'
+}
 const Albums = (props) => {
   const dispatch = useDispatch()
 
@@ -47,12 +51,12 @@ const Albums = (props) => {
           </Link>
           <StyledButtonContainer>
             <Link to={`/album/${album.id}/post`}>
-              <Button style={{ marginLeft: "2%", height: '40px' }} id={album.id} onClick={() => dispatch({ type: 'EDIT_ALBUM', payload: false })}>Add to Album</Button>
+              <Button style={styleButton} id={album.id} onClick={() => dispatch({ type: 'EDIT_ALBUM', payload: false })}>Add to Album</Button>
             </Link>
             <Link to={`/album/edit/${album.id}`}>
-              <Button style={{ marginLeft: "2%", height: '40px' }} id={album.id} onClick={() => dispatch({ type: 'EDIT_ALBUM', payload: true })}>Edit Album</Button>
+              <Button style={styleButton} id={album.id} onClick={() => dispatch({ type: 'EDIT_ALBUM', payload: true })}>Edit Album</Button>
             </Link>
-            <Button style={{ marginLeft: "2%", height: '40px' }} id={album.id} onClick={e => remove(e)}>Delete</Button>
+            <Button style={styleButton} id={album.id} onClick={e => remove(e)}>Delete</Button>
           </StyledButtonContainer>
         </StyledAlbum>
       )) : null}

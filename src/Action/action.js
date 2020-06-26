@@ -69,7 +69,10 @@ export const addAlbum = (post, id) => dispatch => {
 export const addPost = (post, id) => dispatch => {
   // id here uses the album id
   axiosWithAuth().post(`/stories/${id}/photos`, post)
-    .then(res => console.log('Post Successful --> ', res))
+    .then(res => {
+      console.log('Post Successful --> ', res)
+      window.location.reload(true)
+    })
     .catch(err => console.log('Post error --> ', err.response))
 }
 
