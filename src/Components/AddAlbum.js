@@ -134,7 +134,8 @@ const AddAlbum = (props) => {
             onChange={inputChange}
             value={formState.story_name}
           />
-          {errors.story_name === '' ? <p className="error">{errors.story_name}</p> : null}
+          {errors.story_name.length >0 ? <p className="error">{errors.story_name}</p> : null}
+          
         </Label><br />
         <Label htmlFor="story_description">
           <legend>Story Description</legend>
@@ -146,7 +147,7 @@ const AddAlbum = (props) => {
             value={formState.story_description}
             onChange={inputChange}
           />
-          {errors.story_description === '' ? (
+          {errors.story_description.length>0 ? (
             <p className="error">{errors.story_description}</p>
           ) : null}
         </Label>

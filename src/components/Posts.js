@@ -96,7 +96,7 @@ const Posts = (props) => {
             onChange={inputChange}
             value={formState.photo_title}
           />
-          {errors.photo_title === '' ? <p className="error">{errors.photo_title}</p> : null}
+          {errors.photo_title.length > 0 ? <p className="error">{errors.photo_title}</p> : null}
         </Label><br />
         <Label htmlFor="photo_description">
           <legend>Photo Description</legend>
@@ -108,9 +108,7 @@ const Posts = (props) => {
             value={formState.photo_description}
             onChange={inputChange}
           />
-          {errors.photo_description === '' ? (
-            <p className="error">{errors.photo_description}</p>
-          ) : null}
+          {errors.photo_description.length > 0 ? <p className="error">{errors.photo_description}</p> : null}
         </Label>
         <br />
         <Label htmlFor="photo_url">
