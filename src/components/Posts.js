@@ -44,6 +44,7 @@ const Posts = (props) => {
       photo_description: "",
       photo_url: ""
     })
+    props.history.push(`/albums/${param}`)
   }
   const validateChange = e => {
     yup
