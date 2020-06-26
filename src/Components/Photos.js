@@ -51,7 +51,7 @@ const Photos = ({ images, loadPosts, isLoading, spotLight, deletePhoto, album })
               <Link to={`/photo/${image.id}`}>
                 <PhotoCard image={image} key={image.id} height="900px" />
               </Link>
-              <Link to={`/edit/${image.id}`}>
+              <Link to={`/${image.story_id}/edit/${image.id}`}>
                 <Button style={{ marginLeft: "25%" }}>Edit</Button>
               </Link>
               <Button style={{ marginLeft: "10%" }} id={image.id} onClick={remove}>Delete</Button>

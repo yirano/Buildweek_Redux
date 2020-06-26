@@ -87,7 +87,10 @@ export const editAlbum = (id, info) => dispatch => {
 
 export const editPost = (id, post) => dispatch => {
   axiosWithAuth().put(`/photos/${id}`, post)
-    .then(res => console.log('Post Edit Success --> ', res))
+    .then(res => {
+      console.log('Post Edit Success --> ', res)
+      // window.location.reload(true)
+    })
     .catch(err => console.log('Error editing --> ', err.response))
 }
 

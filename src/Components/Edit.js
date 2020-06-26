@@ -10,19 +10,20 @@ const initialState = {
   photo_description: ''
 }
 const Edit = (props) => {
-  const param = useParams().id
-  console.log('STUFF ', props.stuff)
+  const photoID = useParams().id2
+  const albumID = useParams().id1
 
   const [formState, setFormState] = useState(initialState)
 
   const handleSubmit = e => {
     e.preventDefault()
-    props.editPost(param, formState)
+    props.editPost(photoID, formState)
     setFormState(initialState)
+    props.history.push(`/albums/${albumID}`)
   }
 
   useEffect(() => {
-    axiosWithAuth().get(`/photos/${param}`)
+    axiosWithAuth().get(`/photos/${photoID}`)
       .then(res => {
         setFormState({
           photo_url: res.data.photo_url,
